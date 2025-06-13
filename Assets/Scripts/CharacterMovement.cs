@@ -23,15 +23,13 @@ public class CharacterMovement : MonoBehaviour
     {
         float move = Input.GetAxis("Horizontal");
 
-        if (move == 0)
-        {// Always face forward when no horizontal input
-            playerTransform.forward = Vector3.forward;
+        if(playerTransform.position.x > -5f && playerTransform.position.x < 5f)
+        {
+            playerTransform.position += new Vector3(move * laneChangeSpeed, 0, 1) * runSpeed;
         }
         else
-        {// look changing side
-            playerTransform.forward = new Vector3(move*runSpeed, 0, 1).normalized;
+        {
+            playerTransform.position += new Vector3(0, 0, 1) * runSpeed;
         }
-
-        playerTransform.position += new Vector3(move * laneChangeSpeed, 0, 1) * runSpeed;
     }
 }
