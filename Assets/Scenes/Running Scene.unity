@@ -214,8 +214,51 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: 59.664, z: 0}
+--- !u!1 &947315963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1548442148800545427, guid: bcc9fb141f717a244a3f6976b5821b0d, type: 3}
+  m_PrefabInstance: {fileID: 1694023066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &947315967 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2177203733733021737, guid: bcc9fb141f717a244a3f6976b5821b0d, type: 3}
+  m_PrefabInstance: {fileID: 1694023066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &947315968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947315963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35da1c0e116b174194a3113933a3f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &947315969
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947315963}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a945b4fed4878cf47b24613ff32fd75b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,12 +336,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.10663578, y: 0.014018646, z: 0.0065260394, w: -0.9941779}
-  m_LocalPosition: {x: -0.1, y: 3.53, z: -7.17}
+  m_LocalPosition: {x: -0, y: 5.1, z: -5.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 947315967}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 12.231, y: 358.284, z: -0.936}
 --- !u!1 &998800344
 GameObject:
@@ -325,12 +368,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998800344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.698, y: 36.7, z: -41.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &998800346
 MonoBehaviour:
@@ -344,6 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300571615caae49478d95148d9bb44cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 947315967}
   environmentList:
   - {fileID: 3240819070628957968, guid: 81c891bdfc9495043a1efc54d960065c, type: 3}
   - {fileID: 3312217942956853254, guid: 8579e28d5e9879e4fa8cb3bf6674121d, type: 3}
@@ -355,13 +399,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1548442148800545426, guid: bcc9fb141f717a244a3f6976b5821b0d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a945b4fed4878cf47b24613ff32fd75b, type: 2}
+    - target: {fileID: 1548442148800545426, guid: bcc9fb141f717a244a3f6976b5821b0d, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+        'mixamorig:LeftHandThumb2'\n\tTransform 'mixamorig:LeftHandIndex1'\n\tTransform
+        'mixamorig:LeftHandPinky2'\n\tTransform 'mixamorig:RightHandRing2'\n\tTransform
+        'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:LeftHandThumb3'\n\tTransform
+        'mixamorig:RightArm'\n\tand more ...\n\tFrom animation clip 'Running'"
+      objectReference: {fileID: 0}
     - target: {fileID: 1548442148800545427, guid: bcc9fb141f717a244a3f6976b5821b0d, type: 3}
       propertyPath: m_Name
       value: Charactor
       objectReference: {fileID: 0}
     - target: {fileID: 2177203733733021737, guid: bcc9fb141f717a244a3f6976b5821b0d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2177203733733021737, guid: bcc9fb141f717a244a3f6976b5821b0d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -403,5 +461,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1548442148800545426, guid: bcc9fb141f717a244a3f6976b5821b0d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bcc9fb141f717a244a3f6976b5821b0d, type: 3}
