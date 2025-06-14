@@ -18,7 +18,9 @@ public class SceneGeneration : MonoBehaviour
 
     void Start()
     {
-        for(int i = 0; i < noOfEnvironmentsOnScreen; i++)
+        Time.timeScale = 1;
+
+        for (int i = 0; i < noOfEnvironmentsOnScreen; i++)
         {
             SpawnEnvironment();
         }

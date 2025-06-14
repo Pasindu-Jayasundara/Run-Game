@@ -28,6 +28,8 @@ public class CharacterMovement : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+
         animationController = GetComponent<Animator>();
         playerTransform = GetComponent<Transform>();
         playerRigidbody = GetComponent<Rigidbody>();
@@ -65,6 +67,8 @@ public class CharacterMovement : MonoBehaviour
             // Jumping
             if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
             {
+                FindObjectOfType<AudioManager>().JumpAudio();
+
                 isJumping = true;
                 animationController.SetBool("Run", false);
                 animationController.SetBool("Jump", true);
@@ -80,6 +84,8 @@ public class CharacterMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Gold Coin"))
         {
+            FindObjectOfType<AudioManager>().CoinCollectAudio();
+
             Destroy(other.gameObject);
 
             string coinsStr = coinCount.GetParsedText();
@@ -100,6 +106,8 @@ public class CharacterMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Barrier"))
         {
+            FindObjectOfType<AudioManager>().PlayGameEndAudio();
+
             Time.timeScale = 0;
             pauseBtn.SetActive(false);
             goToMenuPanel.SetActive(true);
@@ -110,6 +118,8 @@ public class CharacterMovement : MonoBehaviour
     public void PauseGame()
     {
         isPaused = true;
+
+        FindObjectOfType<AudioManager>().PauseAudio(); 
 
         playPausePanel.SetActive(true);
         pauseBtn.SetActive(false);
@@ -122,6 +132,8 @@ public class CharacterMovement : MonoBehaviour
     public void PlayGame()
     {
         isPaused = false;
+
+        FindObjectOfType<AudioManager>().ResumeAudio();
 
         playPausePanel.SetActive(false);
         pauseBtn.SetActive(true);
