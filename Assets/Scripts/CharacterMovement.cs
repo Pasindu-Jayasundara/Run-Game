@@ -101,8 +101,9 @@ public class CharacterMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Barrier"))
         {
             Time.timeScale = 0;
+            pauseBtn.SetActive(false);
             goToMenuPanel.SetActive(true);
-            wonCoinCount.SetText(collectedCoinCount.ToString());
+            wonCoinCount.SetText("Won: "+collectedCoinCount.ToString()+" coins");
         }
     }
 
